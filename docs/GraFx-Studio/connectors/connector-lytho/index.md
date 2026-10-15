@@ -18,7 +18,7 @@ The installation is done by enabling the Lytho connector on the environment.
 
 [See Installation Through Connector Hub](/GraFx-Studio/guides/connector-hub/)
 
-Setting up the connector is a one-time task for an administrator. Template Designers and end users never need to enter credentials.
+Setting up the connector is a one-time task for an administrator. Template Designers and end users never enter the connector's credentials. With per-user sign-in, each user signs in once with their own Lytho login.
 
 You need:
 
