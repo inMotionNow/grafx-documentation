@@ -115,6 +115,8 @@ Leave **Enable separate server and browser authentication** off.
 - **Token endpoint**: the **Token endpoint** from Lytho
 - **Scope**: the **Scope** from Lytho
 
+Optionally, click **Test authentication** to check the values before you save.
+
 Click **Save**.
 
 #### Per-user sign-in
@@ -134,6 +136,8 @@ Turn on **Enable separate server and browser authentication**.
 - **Authorization endpoint**: the **Authorization endpoint** from Lytho. You find it under **Connectors using per-user sign-in**.
 - **Token endpoint**: the **Token endpoint** from Lytho
 - **Scope**: the **Scope** from Lytho
+
+Optionally, click **Test authentication** to check the values before you save.
 
 Click **Save**.
 
