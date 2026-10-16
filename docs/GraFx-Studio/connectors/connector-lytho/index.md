@@ -70,7 +70,7 @@ The **Values for your GraFx connector** section lists the other values you need:
 - **Token endpoint**
 - **Scope**
 
-Each value has a copy button, and **Copy all values** copies them all at once. The labels tell you where each value goes in CHILI GraFx.
+Each value has a copy button. The labels tell you where each value goes in CHILI GraFx.
 
 ## CHILI GraFx Connector Configuration
 
