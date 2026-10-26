@@ -78,7 +78,9 @@ From the overview of Environments, click on "Settings" on the right of the envir
 
 ![The My environments list, with the Settings button of an environment row highlighted](sc02.png){.screenshot-full}
 
-Then click **Connectors** and open the installed Lytho Connector.
+Then click **Connectors**. If Lytho is not listed yet, click **+ Add connector** and select Lytho (see [Installation Through Connector Hub](/GraFx-Studio/guides/connector-hub/)).
+
+Make sure the **Available** toggle of the Lytho row is switched on. A newly added connector is not available by default, and Template Designers can only add Lytho images to a template while it is available. Then open the Lytho Connector.
 
 ![The environment's Connectors list, with the Lytho row of type Media highlighted](sc03.png){.screenshot-full}
 
