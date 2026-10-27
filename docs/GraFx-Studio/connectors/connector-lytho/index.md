@@ -27,18 +27,19 @@ You need:
 
 Often this is the same person.
 
-## Choose How Users Sign In
+!!! abstract "Setup at a glance"
 
-Before you start, decide which of the two setups you want. You can change it later.
+    1. **[Lytho Configuration](#lytho-configuration)** (in Lytho): generate the credentials and copy the values for your GraFx connector.
+    2. **[CHILI GraFx Connector Configuration](#chili-grafx-connector-configuration)** (in CHILI GraFx): add the Lytho connector and make it available. Then fill in its two tabs:
+        - **[Configuration](#configuration)**: paste the runtime options and proxy settings.
+        - **[Authentication](#authentication)**: choose account-level access or per-user sign-in. With per-user sign-in, you also register the connector in Lytho.
 
-| Setup | What users see | Sign-in |
-|---|---|---|
-| **Account-level access** | Every asset in your Lytho account | None. The connector always connects with the account's credentials. |
-| **Per-user sign-in** | Only the assets their own Lytho user may see | Each user signs in to Lytho once in GraFx Studio |
+    When setup is done, Template Designers can start [using assets from your Lytho DAM](#using-assets-from-your-lytho-dam). If something does not work, see [Troubleshooting](#troubleshooting).
 
-Exporting and rendering output always uses the account's credentials, because no user is present at that point. In both setups, this lets templates that contain restricted assets still export.
+!!! tip "Track your progress"
+    Each step below is a short checklist. Tick an item's box when you finish it, and the item collapses so you can see what is left. The boxes are only there for your convenience and are cleared when you leave the page.
 
-## Lytho Configuration
+## Step 1: Lytho Configuration {#lytho-configuration}
 
 In Lytho, go to **Settings → Advanced → GraFx connector**.
 
@@ -47,117 +48,138 @@ In Lytho, go to **Settings → Advanced → GraFx connector**.
 
 ![The Lytho GraFx connector settings page, showing the Credentials and Values for your GraFx connector sections](sc01.png){.screenshot-full}
 
-### Generate the credentials
+<a id="generate-the-credentials"></a>
 
-Click **Generate credentials**. Lytho shows:
+???+ abstract "<input type="checkbox"> 1.1 Generate the credentials"
 
-- **Client ID**
-- **Client secret**
+    Click **Generate credentials**. Lytho shows:
 
-!!! warning "The client secret is shown only once"
-    Copy the client secret immediately and keep it somewhere safe. If you lose it, click **Regenerate credentials** to get a new one.
+    - **Client ID**
+    - **Client secret**
 
-These credentials can view and download every asset in your Lytho account, including embargoed assets. Enter them only in a GraFx environment you trust.
+    !!! warning "The client secret is shown only once"
+        Copy the client secret immediately and keep it somewhere safe. If you lose it, click **Regenerate credentials** to get a new one.
 
-You need one set of credentials per Lytho account. Use the same Client ID and Client secret in every GraFx environment you connect, for example both your sandbox and your production environment.
+    These credentials can view and download every asset in your Lytho account, including embargoed assets. Enter them only in a GraFx environment you trust.
 
-### Values for your GraFx connector
+    You need one set of credentials per Lytho account. Use the same Client ID and Client secret in every GraFx environment you connect, for example both your sandbox and your production environment.
 
-The **Values for your GraFx connector** section lists the other values you need:
+<a id="values-for-your-grafx-connector"></a>
 
-- **Runtime options → LYTHO_BASE_URL**
-- **Proxy settings → Allowed domain**
-- **Token endpoint**
-- **Scope**
+???+ abstract "<input type="checkbox"> 1.2 Copy the values for your GraFx connector"
 
-Each value has a copy button. The labels tell you where each value goes in CHILI GraFx.
+    The **Values for your GraFx connector** section lists the other values you need:
 
-## CHILI GraFx Connector Configuration
+    - **Runtime options → LYTHO_BASE_URL**
+    - **Proxy settings → Allowed domain**
+    - **Token endpoint**
+    - **Scope**
 
-From the overview of Environments, click on "Settings" on the right of the environment where you want to configure the Connector.
+    Each value has a copy button. The labels tell you where each value goes in CHILI GraFx.
 
-![The My environments list, with the Settings button of an environment row highlighted](sc02.png){.screenshot-full}
+## Step 2: CHILI GraFx Connector Configuration {#chili-grafx-connector-configuration}
 
-Then click **Connectors**. If Lytho is not listed yet, click **+ Add connector** and select Lytho (see [Installation Through Connector Hub](/GraFx-Studio/guides/connector-hub/)).
+<a id="add-the-connector"></a>
 
-Make sure the **Available** toggle of the Lytho row is switched on. A newly added connector is not available by default, and Template Designers can only add Lytho images to a template while it is available. Then open the Lytho Connector.
+???+ abstract "<input type="checkbox"> 2.1 Add the connector and make it available"
 
-![The environment's Connectors list, with the Lytho row of type Media highlighted](sc03.png){.screenshot-full}
+    From the overview of Environments, click on "Settings" on the right of the environment where you want to configure the Connector.
 
-### Configuration
+    ![The My environments list, with the Settings button of an environment row highlighted](sc02.png){.screenshot-full style="max-width: calc(100% - 40px)"}
 
-On the **Configuration** tab:
+    Then click **Connectors**. If Lytho is not listed yet, click **+ Add connector** and select Lytho (see [Installation Through Connector Hub](/GraFx-Studio/guides/connector-hub/)).
 
-![The Lytho connector's Configuration tab, with LYTHO_BASE_URL under Runtime options and the allowed domain under Proxy settings](sc04.png){.screenshot-full}
+    Make sure the **Available** toggle of the Lytho row is switched on. A newly added connector is not available by default, and Template Designers can only add Lytho images to a template while it is available. Then open the Lytho Connector.
 
-**Runtime options**
+    ![The environment's Connectors list, with the Lytho row of type Media highlighted](sc03.png){.screenshot-full style="max-width: calc(100% - 40px)"}
 
-- **LYTHO_BASE_URL**: paste the value of **Runtime options → LYTHO_BASE_URL** from Lytho.
+<a id="configuration"></a>
 
-**Proxy settings**
+???+ abstract "<input type="checkbox"> 2.2 Fill in the Configuration tab"
 
-- **Allowed domain**: paste the value of **Proxy settings → Allowed domain** from Lytho.
+    On the **Configuration** tab:
 
-Click **Save**.
+    ![The Lytho connector's Configuration tab, with LYTHO_BASE_URL under Runtime options and the allowed domain under Proxy settings](sc04.png){.screenshot-full style="max-width: calc(100% - 40px)"}
 
-### Authentication
+    **Runtime options**
 
-On the **Authentication** tab, follow the steps for the setup you chose.
+    - **LYTHO_BASE_URL**: paste the value of **Runtime options → LYTHO_BASE_URL** from Lytho.
 
-#### Account-level access
+    **Proxy settings**
 
-Leave **Enable separate server and browser authentication** off.
+    - **Allowed domain**: paste the value of **Proxy settings → Allowed domain** from Lytho.
 
-**Server and browser authentication:** OAuth 2.0 Client Credentials
+    Click **Save**.
 
-![The Authentication tab set to OAuth 2.0 Client Credentials for server and browser, with the Client ID, Client secret, Token endpoint, and Scope fields filled in](sc05.png){.screenshot-full}
+<a id="authentication"></a>
 
-- **Client ID**: the **Client ID** from Lytho
-- **Client secret**: the **Client secret** from Lytho
-- **Token endpoint**: the **Token endpoint** from Lytho
-- **Scope**: the **Scope** from Lytho
+???+ abstract "<input type="checkbox"> 2.3 Fill in the Authentication tab"
 
-Optionally, click **Test authentication** to check the values before you save.
+    Before you fill in the connector's **Authentication** tab, decide how your users reach Lytho. There are two setups:
 
-Click **Save**.
+    | Setup | Choose it if | What users see | Sign-in |
+    |---|---|---|---|
+    | **Account-level access** | Everyone who uses your templates may see every asset | Every asset in your Lytho account | None. The connector always connects with the account's credentials. |
+    | **Per-user sign-in** | Users should only see what their Lytho permissions allow | Only the assets their own Lytho user may see | Each user signs in to Lytho once in GraFx Studio |
 
-#### Per-user sign-in
+    Exporting and rendering output always uses the account's credentials, because no user is present at that point. In both setups, this lets templates that contain restricted assets still export.
 
-Turn on **Enable separate server and browser authentication**.
+    **Select your setup** below to see its configuration steps. You can switch between the tabs to compare them, and you can change the setup later.
 
-![The Authentication tab with separate server and browser authentication: OAuth 2.0 Client Credentials for the server, OAuth 2.0 Authorization Code for the browser](sc06.png){.screenshot-full}
+    === "Account-level access"
 
-**1. Server authentication:** OAuth 2.0 Client Credentials
+        Leave **Enable separate server and browser authentication** off.
 
-- **Client ID**, **Client secret**, **Token endpoint**, and **Scope**: the values with the same names in Lytho
+        **Server and browser authentication:** OAuth 2.0 Client Credentials
 
-**2. Browser authentication:** OAuth 2.0 Authorization Code
+        ![The Authentication tab set to OAuth 2.0 Client Credentials for server and browser, with the Client ID, Client secret, Token endpoint, and Scope fields filled in](sc05.png){.screenshot-full style="max-width: calc(100% - 40px)"}
 
-- **Client ID**: the **Client ID** from Lytho
-- **Client secret**: the **Client secret** from Lytho
-- **Authorization endpoint**: the **Authorization endpoint** from Lytho. You find it under **Connectors using per-user sign-in**.
-- **Token endpoint**: the **Token endpoint** from Lytho
-- **Scope**: the **Scope** from Lytho
+        - **Client ID**: the **Client ID** from Lytho
+        - **Client secret**: the **Client secret** from Lytho
+        - **Token endpoint**: the **Token endpoint** from Lytho
+        - **Scope**: the **Scope** from Lytho
 
-Optionally, click **Test authentication** to check the values before you save.
+        Optionally, click **Test authentication** to check the values before you save.
 
-Click **Save**.
+        Click **Save**.
 
-##### Register the connector in Lytho
+    === "Per-user sign-in"
 
-Per-user sign-in only works after Lytho knows about this connector. Do this once for every GraFx environment in which you set up per-user sign-in.
+        Turn on **Enable separate server and browser authentication**.
 
-1. In CHILI GraFx, find your environment's **Technical name** under **Settings → General**.
+        ![The Authentication tab with separate server and browser authentication: OAuth 2.0 Client Credentials for the server, OAuth 2.0 Authorization Code for the browser](sc06.png){.screenshot-full style="max-width: calc(100% - 40px)"}
 
-    ![The environment's General settings, with the Technical name field highlighted](sc07.png){.screenshot-full}
+        **1. Server authentication:** OAuth 2.0 Client Credentials
 
-2. Copy the address of the Lytho connector's page in CHILI GraFx (**Settings → Connectors →** your Lytho connector). You can also use just the connector ID at the end of that address.
-3. In Lytho, go to **Settings → Advanced → GraFx connector → Connectors using per-user sign-in** and click **Add connector**.
-4. Enter the **Technical name**, paste the address in **Connector URL or ID**, and click **Save**.
+        - **Client ID**, **Client secret**, **Token endpoint**, and **Scope**: the values with the same names in Lytho
 
-    ![The Lytho Add connector dialog, with the Technical name and Connector URL or ID fields](sc08.png){.screenshot}
+        **2. Browser authentication:** OAuth 2.0 Authorization Code
 
-The first time a user opens Lytho assets in GraFx Studio, they are asked to sign in with their Lytho login.
+        - **Client ID**: the **Client ID** from Lytho
+        - **Client secret**: the **Client secret** from Lytho
+        - **Authorization endpoint**: the **Authorization endpoint** from Lytho. You find it under **Connectors using per-user sign-in**.
+        - **Token endpoint**: the **Token endpoint** from Lytho
+        - **Scope**: the **Scope** from Lytho
+
+        Optionally, click **Test authentication** to check the values before you save.
+
+        Click **Save**.
+
+        #### Register the connector in Lytho
+
+        Per-user sign-in only works after Lytho knows about this connector. Do this once for every GraFx environment in which you set up per-user sign-in.
+
+        1. In CHILI GraFx, find your environment's **Technical name** under **Settings → General**.
+
+            ![The environment's General settings, with the Technical name field highlighted](sc07.png){.screenshot-full style="max-width: calc(100% - 40px)"}
+
+        2. Copy the address of the Lytho connector's page in CHILI GraFx (**Settings → Connectors →** your Lytho connector). You can also use just the connector ID at the end of that address.
+        3. In Lytho, go to **Settings → Advanced → GraFx connector → Connectors using per-user sign-in** and click **Add connector**.
+        4. Enter the **Technical name**, paste the address in **Connector URL or ID**, and click **Save**.
+
+            ![The Lytho Add connector dialog, with the Technical name and Connector URL or ID fields](sc08.png){.screenshot}
+
+        The first time a user opens Lytho assets in GraFx Studio, they are asked to sign in with their Lytho login.
 
 ## Using Assets from Your Lytho DAM
 
@@ -201,6 +223,32 @@ These filters only affect browsing and searching. An asset that is already place
 | The **GraFx connector** tab is missing in Lytho | Only account admins see it, and the connector must be enabled for your Lytho account. Contact Lytho Support. |
 | You lost the client secret | In Lytho, click **Regenerate credentials** and enter the new secret in every GraFx environment that uses the connector. |
 | The connector stopped working in every environment at once | Someone regenerated the credentials in Lytho. Enter the new Client secret on the **Authentication** tab of the Lytho connector in each environment. |
-| Users get an "Invalid parameter: redirect_uri" error when signing in | The connector is not registered in Lytho. See [Register the connector in Lytho](#register-the-connector-in-lytho). |
+| Users get an "Invalid parameter: redirect_uri" error when signing in | The connector is not registered in Lytho. See **Register the connector in Lytho** in the **Per-user sign-in** steps under [Authentication](#authentication). |
 | A user sees fewer assets than expected after their Lytho permissions changed | GraFx keeps a user's sign-in for a while. The new permissions apply once it renews, which can take up to about two hours. |
 | An asset you expect is not listed | Check its file type and its visible and publish dates in Lytho (see [Which assets are available](#which-assets-are-available)). |
+
+
+<script>
+  // Collapse a checklist item when its box is ticked, and reopen it when unticked.
+  document.querySelectorAll("details > summary > input[type=checkbox]").forEach(function (box) {
+    box.addEventListener("change", function () {
+      box.closest("details").open = !box.checked;
+    });
+  });
+
+  // Expand the checklist item a link points to, so a collapsed item opens when you jump to it.
+  function openTarget(id) {
+    var target = document.getElementById(decodeURIComponent(id));
+    if (!target) return;
+    var anchor = target.parentElement.tagName === "P" ? target.parentElement : target;
+    var next = anchor.nextElementSibling;
+    if (next && next.tagName === "DETAILS") next.open = true;
+    for (var el = target.closest("details"); el; el = el.parentElement.closest("details")) el.open = true;
+  }
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest('a[href^="#"]');
+    if (link) openTarget(link.getAttribute("href").slice(1));
+  });
+  window.addEventListener("hashchange", function () { openTarget(location.hash.slice(1)); });
+  if (location.hash) openTarget(location.hash.slice(1));
+</script>
