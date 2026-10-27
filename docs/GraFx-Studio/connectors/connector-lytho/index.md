@@ -50,7 +50,7 @@ In Lytho, go to **Settings → Advanced → GraFx connector**.
 
 <a id="generate-the-credentials"></a>
 
-???+ abstract "<input type="checkbox"> 1.1 Generate the credentials"
+???+ abstract "<input type="checkbox" aria-label="Mark 1.1 as done"> 1.1 Generate the credentials"
 
     Click **Generate credentials**. Lytho shows:
 
@@ -66,7 +66,7 @@ In Lytho, go to **Settings → Advanced → GraFx connector**.
 
 <a id="values-for-your-grafx-connector"></a>
 
-???+ abstract "<input type="checkbox"> 1.2 Copy the values for your GraFx connector"
+???+ abstract "<input type="checkbox" aria-label="Mark 1.2 as done"> 1.2 Copy the values for your GraFx connector"
 
     The **Values for your GraFx connector** section lists the other values you need:
 
@@ -81,7 +81,7 @@ In Lytho, go to **Settings → Advanced → GraFx connector**.
 
 <a id="add-the-connector"></a>
 
-???+ abstract "<input type="checkbox"> 2.1 Add the connector and make it available"
+???+ abstract "<input type="checkbox" aria-label="Mark 2.1 as done"> 2.1 Add the connector and make it available"
 
     From the overview of Environments, click on "Settings" on the right of the environment where you want to configure the Connector.
 
@@ -95,7 +95,7 @@ In Lytho, go to **Settings → Advanced → GraFx connector**.
 
 <a id="configuration"></a>
 
-???+ abstract "<input type="checkbox"> 2.2 Fill in the Configuration tab"
+???+ abstract "<input type="checkbox" aria-label="Mark 2.2 as done"> 2.2 Fill in the Configuration tab"
 
     On the **Configuration** tab:
 
@@ -113,7 +113,7 @@ In Lytho, go to **Settings → Advanced → GraFx connector**.
 
 <a id="authentication"></a>
 
-???+ abstract "<input type="checkbox"> 2.3 Fill in the Authentication tab"
+???+ abstract "<input type="checkbox" aria-label="Mark 2.3 as done"> 2.3 Fill in the Authentication tab"
 
     Before you fill in the connector's **Authentication** tab, decide how your users reach Lytho. There are two setups:
 
@@ -165,7 +165,7 @@ In Lytho, go to **Settings → Advanced → GraFx connector**.
 
         Click **Save**.
 
-        #### Register the connector in Lytho
+        **Register the connector in Lytho**
 
         Per-user sign-in only works after Lytho knows about this connector. Do this once for every GraFx environment in which you set up per-user sign-in.
 
